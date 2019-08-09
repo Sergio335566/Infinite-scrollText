@@ -1,0 +1,22 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+.container{
+  width: 100%;
+  height: 40px;
+  background-color: white;
+  font-family: 'Union-Regular';
+  display: flex
+}
+.text {
+  display: flex;
+}
+.text span {
+  min-width: 83px;
+  text-align: center;
+  padding: 0;
+  margin: 13px 0;
+  text-transform: uppercase;
+  font-size: 10px
+}
