@@ -1,17 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
-    init();
-})
-
-function init() {
     'use strict';
-    var container = document.querySelector('.js-container');
-    var text = container.querySelector('.js-text');
-    var texts = container.querySelector('.js-text span');
-    for (var i = 0; i < 20; i++) {
-        var textsCloned = texts.cloneNode(true)
-        text.appendChild(textsCloned)
+    var scrollDiv = document.querySelector('.js-scroll'),
+        content = scrollDiv.querySelector('.js-text'),
+        span = content.querySelector('span'),
+        i,
+        spanCloned,
+        contentCloned;
+    for (i = 0; i < 20; i += 1) {
+        spanCloned = span.cloneNode(true);
+        content.appendChild(spanCloned);
     }
-    var textCloned = text.cloneNode(true)
-    container.appendChild(textCloned)
-    TweenMax.to('.js-text', 20, {x: -text.offsetWidth, repeat:-1, ease:Linear.easeNone});
-}
+    contentCloned = content.cloneNode(true);
+    scrollDiv.appendChild(contentCloned);
+    TweenMax.to('.js-text', 20, { x: -content.offsetWidth, repeat:-1, ease:Linear.easeNone });
+});
